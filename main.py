@@ -1,9 +1,9 @@
 import streamlit as st
-from stream import StreamHandler
-from secret import OPENAI_API_KEY
+from utils.stream import StreamHandler
 from langchain.chat_models import ChatOpenAI
 import tools.titles as titles, tools.three_outlines as three_outlines, tools.single_outline as single_outline, tools.rough_script as rough_script, tools.final_script as final_script
 
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 PAGE_TITLE = "ScriptPilot"
 PAGE_ICON = "📺"
 LAYOUT = "centered"
@@ -15,7 +15,7 @@ def create_chat(temperature, model, stream_handler):
     chat = ChatOpenAI(
         temperature=temperature, 
         model=model, 
-        openai_api_key=OPENAI_API_KEY, 
+        openai_api_key=openai_api_key, 
         request_timeout=250,
         streaming=True, 
         callbacks=[stream_handler]
