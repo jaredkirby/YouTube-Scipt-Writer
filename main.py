@@ -89,9 +89,9 @@ def handle_video_outline_tab():
     model = "gpt-4"
     outlines_button = st.button("Generate Video Outlines")
     if outlines_button:
-        single_chat_box = st.empty()
-        single_stream_handler = StreamHandler(single_chat_box)
-        single_chat = create_chat(temperature, model, single_stream_handler)
+        # single_chat_box = st.empty()
+        # single_stream_handler = StreamHandler(single_chat_box)
+        # single_chat = create_chat(temperature, model, single_stream_handler)
 
         three_chat_box = st.empty()
         three_stream_handler = StreamHandler(three_chat_box)
@@ -100,7 +100,7 @@ def handle_video_outline_tab():
         three_results = three_outlines.get_outlines(
             three_chat, outlines_input=user_input
         )
-        single_outline.get_outline(single_chat, selected_input=three_results)
+        # single_outline.get_outline(single_chat, selected_input=three_results)
 
 
 def handle_video_script_tab():
