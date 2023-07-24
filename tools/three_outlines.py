@@ -45,8 +45,8 @@ def get_outlines(chat, outlines_input: str):
     {outlines_input}
     --- 
 
-    Respond with 2 detailed video descriptions and outlines for the the video content.
-    The first attempt will be your rough draft. The second attempt will be your revised draft.
+    Respond with 3 detailed video descriptions and outlines options for the video content.
+    Each option should incorporate a different theme or take on the topic.
     Format your response in the markdown syntax.
     """
     human_prompt = HumanMessagePromptTemplate.from_template(human_template)
